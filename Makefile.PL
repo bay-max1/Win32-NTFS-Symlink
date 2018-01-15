@@ -15,7 +15,6 @@ my $meta_merge = {
          web => 'https://github.com/bay-max1/Win32-NTFS-Symlink',
       },
       bugtracker => {
-         mailto => 'baymax@cpan.org',
          web => 'https://github.com/bay-max1/Win32-NTFS-Symlink/issues',
       },
    },
