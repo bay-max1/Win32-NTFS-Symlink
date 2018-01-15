@@ -10,6 +10,7 @@ my $github_repo_base = 'github.com/bay-max1/Win32-NTFS-Symlink';
 
 my $meta_merge = {
    'meta-spec' => { version => 2 },
+   dynamic_config => 0,
    
    resources => {
       repository => {
