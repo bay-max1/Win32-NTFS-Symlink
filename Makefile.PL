@@ -6,16 +6,19 @@ use warnings;
 
 use ExtUtils::MakeMaker;
 
+my $github_repo_base = 'github.com/bay-max1/Win32-NTFS-Symlink';
+
 my $meta_merge = {
    'meta-spec' => { version => 2 },
+   
    resources => {
       repository => {
          type => 'git',
-         url => 'git://github.com/bay-max1/Win32-NTFS-Symlink.git',
-         web => 'https://github.com/bay-max1/Win32-NTFS-Symlink',
+         url  => "git://$github_repo_base.git",
+         web  => "https://$github_repo_base",
       },
       bugtracker => {
-         web => 'https://github.com/bay-max1/Win32-NTFS-Symlink/issues',
+         web => "https://$github_repo_base/issues",
       },
    },
 };
