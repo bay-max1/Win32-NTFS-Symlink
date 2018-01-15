@@ -6,6 +6,21 @@ use warnings;
 
 use ExtUtils::MakeMaker;
 
+my $meta_merge = {
+   'meta-spec' => { version => 2 },
+   resources => {
+      repository => {
+         type => 'git',
+         url => 'git://github.com/bay-max1/Win32-NTFS-Symlink.git',
+         web => 'https://github.com/bay-max1/Win32-NTFS-Symlink',
+      },
+      bugtracker => {
+         mailto => 'baymax@cpan.org',
+         web => 'https://github.com/bay-max1/Win32-NTFS-Symlink/issues',
+      },
+   },
+};
+
 WriteMakefile(
    NAME              => 'Win32::NTFS::Symlink',
    VERSION_FROM      => 'lib/Win32/NTFS/Symlink.pm',
@@ -17,5 +32,6 @@ WriteMakefile(
    LIBS              => [''],
    DEFINE            => '',
    INC               => '-I. -Iinclude',
-   OBJECT            => '$(O_FILES)'
+   OBJECT            => '$(O_FILES)',
+   META_MERGE        => $meta_merge
 );
