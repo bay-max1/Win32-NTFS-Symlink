@@ -13,13 +13,10 @@ MODULE = Win32::NTFS::Symlink		PACKAGE = Win32::NTFS::Symlink
 
 PROTOTYPES: DISABLE
 
-int ntfs_junction(oldpath, newpath)
-   const char * oldpath
-   const char * newpath
+char * ntfs_readlink(path)
+   SV * path
    CODE:
-      int ret = _ntfs_junction(oldpath, newpath);
-      if (!ret) errno = GetLastError();
-      RETVAL = ret;
+      RETVAL = _ntfs_readlink(SvPV_nolen(path));
    OUTPUT:
       RETVAL
 
@@ -33,9 +30,12 @@ int ntfs_symlink(oldpath, newpath)
    OUTPUT:
       RETVAL
 
-char * ntfs_readlink(path)
-   SV * path
+int ntfs_junction(oldpath, newpath)
+   const char * oldpath
+   const char * newpath
    CODE:
-      RETVAL = _ntfs_readlink(SvPV_nolen(path));
+      int ret = _ntfs_junction(oldpath, newpath);
+      if (!ret) errno = GetLastError();
+      RETVAL = ret;
    OUTPUT:
       RETVAL
