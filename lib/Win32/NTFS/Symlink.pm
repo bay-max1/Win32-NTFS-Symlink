@@ -347,9 +347,13 @@ This isn't needed if you are using Vista or Server 2008 R1 (NT 6.0), or later.
 
 =head1 TODO
 
+=over
+
 =item Implement C<-l>
 
 I plan to do this for the next release!
+
+=back
 
 =head1 ACKNOWLEDGEMENTS
 
